@@ -1,5 +1,5 @@
 import path from 'path'
-import { app, ipcMain } from 'electron'
+import { app, ipcMain, shell } from 'electron'
 import serve from 'electron-serve'
 import { createWindow } from './helpers'
 
@@ -37,4 +37,8 @@ app.on('window-all-closed', () => {
 
 ipcMain.on('message', async (event, arg) => {
   event.reply('message', `${arg} World!`)
+})
+
+ipcMain.on("open-file-explorer", (arg) => {
+  shell.openPath(app.getPath("desktop"))
 })

@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "my-nextron-app",
-  "description": "My application description",
-  "version": "1.0.0",
-  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "name": "spendenlauf-app",
+  "description": "spendenlauf-app",
+  "version": "0.0.2",
+  "author": "Alexander Model",
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
