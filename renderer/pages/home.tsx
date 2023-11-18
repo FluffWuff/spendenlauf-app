@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link.js';
 
 export default function HomePage() {
   
@@ -28,7 +29,7 @@ export default function HomePage() {
 
         <div className="row-span-1 col-span-7 flex items-center justify-center border-b-4 border-secondary-second">
           <button className="bg-primary hover:bg-primary-second text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 hover:text-secondary-second rounded">
-            Vor dem Lauf
+            <Link href='/prerun'>Prerun</Link>
           </button>
         </div>
 
@@ -38,9 +39,11 @@ export default function HomePage() {
           </button>
         </div>
         <div className="row-span-1 col-span-7 bg-primary-second flex items-center justify-center">
-          <button className="bg-primary hover:bg-primary-second text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 hover:text-secondary-second rounded">
-            Nach dem Lauf
+          <button type="button" className="bg-primary hover:bg-primary-second text-white font-bold py-2 px-4 border-b-4 border-blue-700 cursor-not-allowed hover:border-blue-500 hover:text-secondary-second rounded" disabled>
+            <Link href='/postrun'>Postrun</Link>
           </button>
+
+          
         </div>
       </div>
     </React.Fragment>
