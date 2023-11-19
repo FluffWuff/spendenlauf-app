@@ -2,6 +2,7 @@ import path from 'path'
 import { app, ipcMain, shell } from 'electron'
 import serve from 'electron-serve'
 import { createWindow } from './helpers'
+import fs from 'fs'
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -39,6 +40,10 @@ ipcMain.on('message', async (event, arg) => {
   event.reply('message', `${arg} World!`)
 })
 
-ipcMain.on("open-file-explorer", (arg) => {
+ipcMain.on("open-file-explorer", () => {
   shell.openPath(app.getPath("desktop"))
+})
+
+ipcMain.on("generating-runners", (_, path) => {
+  const jsonFile = fs.readFileSync(path, 'utf-8')
 })
