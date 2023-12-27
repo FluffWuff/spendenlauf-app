@@ -44,7 +44,9 @@ export const createWindow = (
   const resetToDefaults = () => {
     const bounds = screen.getPrimaryDisplay().bounds
     return Object.assign({}, defaultSize, {
+      //@ts-ignore
       x: (bounds.width - defaultSize.width) / 2,
+      //@ts-ignore
       y: (bounds.height - defaultSize.height) / 2,
     })
   }
